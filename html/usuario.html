@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NovaSystem | Plataforma Digital</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<div class="fondo">
+    <div class="panel">
+
+        <div class="lado-izquierdo">
+            <div class="marca">
+                <div class="icono-marca">N</div>
+                <span>NovaSystem</span>
+            </div>
+
+            <div class="contenido-izquierdo">
+                <span class="etiqueta">PLATAFORMA DIGITAL</span>
+                <h1>Tu espacio digital comienza aquí.</h1>
+                <p>
+                    Accede a tu cuenta y disfruta de una experiencia
+                    sencilla, moderna y segura.
+                </p>
+
+                <div class="beneficios">
+                    <div>✓ Gestión de usuarios</div>
+                    <div>✓ Acceso personalizado</div>
+                    <div>✓ Recuperación de cuenta</div>
+                </div>
+            </div>
+
+            <div class="pie-izquierdo">
+                © 2026 NovaSystem. Todos los derechos reservados.
+            </div>
+        </div>
+
+        <div class="lado-derecho">
+
+            <!-- INICIO DE SESION -->
+            <section id="login" class="pantalla">
+                <div class="bienvenida">¡Qué bueno tenerte aquí!</div>
+                <h2>Iniciar sesión</h2>
+                <p class="descripcion">Ingresa tus datos para continuar.</p>
+
+                <label>Nombre de usuario</label>
+                <input type="text" id="usuario" placeholder="Ej. Maykel">
+
+                <label>Contraseña</label>
+                <input type="password" id="clave" placeholder="Ingresa tu contraseña">
+
+                <div class="opciones">
+                    <a href="#" onclick="mostrar('recuperarClave')">
+                        ¿Olvidaste tu contraseña?
+                    </a>
+                </div>
+
+                <button onclick="iniciarSesion()">Iniciar sesión →</button>
+
+                <div class="separador"><span>¿ERES NUEVO?</span></div>
+
+                <p class="registro-texto">
+                    Crea una cuenta
+                    <a href="#" onclick="mostrar('registro')">Regístrate aquí</a>
+                </p>
+
+                <a class="enlace-secundario"
+                   href="#" onclick="mostrar('recuperarUsuario')">
+                    ¿Olvidaste tu usuario?
+                </a>
+            </section>
+
+            <!-- REGISTRO -->
+            <section id="registro" class="pantalla oculto">
+                <div class="bienvenida">Únete a nuestra plataforma</div>
+                <h2>Crear una cuenta</h2>
+                <p class="descripcion">Completa los siguientes datos.</p>
+
+                <label>Nombre de usuario</label>
+                <input type="text" id="nuevoUsuario" placeholder="Crea tu usuario">
+
+                <label>Correo electrónico</label>
+                <input type="email" id="nuevoCorreo" placeholder="ejemplo@gmail.com">
+
+                <label>Contraseña</label>
+                <input type="password" id="nuevaClave" placeholder="Crea una contraseña">
+
+                <button onclick="registrar()">Crear cuenta →</button>
+
+                <p class="registro-texto">
+                    ¿Ya tienes una cuenta?
+                    <a href="#" onclick="mostrar('login')">Inicia sesión</a>
+                </p>
+            </section>
+
+            <!-- RECUPERAR USUARIO -->
+            <section id="recuperarUsuario" class="pantalla oculto">
+                <div class="simbolo">✉</div>
+                <h2>Recuperar usuario</h2>
+                <p class="descripcion">
+                    Escribe tu correo electrónico para encontrar tu usuario.
+                </p>
+
+                <label>Correo electrónico</label>
+                <input type="email" id="correoUsuario"
+                       placeholder="ejemplo@gmail.com">
+
+                <button onclick="recuperarUsuario()">Buscar usuario →</button>
+
+                <p class="registro-texto">
+                    <a href="#" onclick="mostrar('login')">← Volver al inicio</a>
+                </p>
+            </section>
+
+            <!-- RECUPERAR CONTRASEÑA -->
+            <section id="recuperarClave" class="pantalla oculto">
+                <div class="simbolo">🔐</div>
+                <h2>Nueva contraseña</h2>
+                <p class="descripcion">
+                    Verifica tu correo y escribe una nueva contraseña.
+                </p>
+
+                <label>Correo electrónico</label>
+                <input type="email" id="correoClave"
+                       placeholder="ejemplo@gmail.com">
+
+                <label>Nueva contraseña</label>
+                <input type="password" id="claveNueva"
+                       placeholder="Escribe tu nueva contraseña">
+
+                <button onclick="cambiarClave()">Actualizar contraseña →</button>
+
+                <p class="registro-texto">
+                    <a href="#" onclick="mostrar('login')">← Volver al inicio</a>
+                </p>
+            </section>
+
+            <!-- BIENVENIDA -->
+            <section id="bienvenida" class="pantalla oculto">
+                <div class="simbolo exito">✓</div>
+                <h2>¡Bienvenido!</h2>
+                <p class="descripcion">Has iniciado sesión correctamente.</p>
+
+                <div class="usuario-card">
+                    <div class="avatar">👤</div>
+                    <p>Hola,</p>
+                    <h3 id="nombreBienvenida"></h3>
+                    <span>Usuario activo</span>
+                </div>
+
+                <button onclick="cerrarSesion()">Cerrar sesión</button>
+            </section>
+
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
